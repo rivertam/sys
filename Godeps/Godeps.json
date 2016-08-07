@@ -1,0 +1,16 @@
+{
+	"ImportPath": "sys",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v74",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/websocket",
+			"Comment": "v1.0.0-20-ga69d25b",
+			"Rev": "a69d25be2fe2923a97c2af6849b2f52426f68fc0"
+		},
+		{
+			"ImportPath": "github.com/pkg/browser",
+			"Rev": "9302be274faad99162b9d48ec97b24306872ebb0"
+		}
+	]
+}
