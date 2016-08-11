@@ -3,3 +3,4 @@ sys
 .tern-port
 vendor
 **/*.bundle.js
+**/*.js.map

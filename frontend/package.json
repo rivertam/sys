@@ -4,7 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register '**/*.test.jsx' "
+    "test": "mocha --compilers js:babel-register '**/*.test.jsx'",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
