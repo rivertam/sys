@@ -80,10 +80,10 @@ func fetchLoad() string {
 		return fmt.Sprintf("couldn't run uptime because %s", err)
 	}
 
-	loadRegexp := regexp.MustCompile("load average: ([\\d\\.]+), ([\\d\\.]+), ([\\d\\.]+)")
+  loadRegexp := regexp.MustCompile("load averages?: ([\\d\\.]+),? ([\\d\\.]+),? ([\\d\\.]+)")
 	matches := loadRegexp.FindAllStringSubmatch(string(result), -1)
 	if len(matches) < 1 {
-		return "I dunno I guess we're down"
+    return fmt.Sprintf("I dunno I guess we're down: %s", result)
 	}
 
 	numbersAsStrings := matches[0][1:]
