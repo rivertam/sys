@@ -45,7 +45,7 @@ export class LoadMonitor extends Component {
 
     const warnings = data.map((d, i) => ({
       diff: d >= threshold ? 'add' : 'remove',
-      message: `Load average for past ${MINUTES[i]} is too high at ${d}!`,
+      message: `Load average for past ${MINUTES[i]} minutes is too high at ${d}!`,
       name: `load${i}`,
     }));
 
