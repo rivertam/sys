@@ -3,10 +3,14 @@ import React, { Component, PropTypes } from 'react';
 const d3 = require('d3');
 
 export default class MultiLineGraph extends Component {
+  static numberInstantiated = 0
   constructor(props) {
     super(props);
     this.number = this.constructor.numberInstantiated++;
-    this.initialize(props);
+  }
+
+  componentDidMount() {
+    this.initialize(this.props);
   }
 
   shouldComponentUpdate(props) {
@@ -18,6 +22,7 @@ export default class MultiLineGraph extends Component {
     if (!props.data) {
       return;
     }
+
     const limit = 60 * 5;
     const duration = 750;
     let now = new Date(Date.now() - duration);
@@ -97,6 +102,7 @@ export default class MultiLineGraph extends Component {
     };
 
     this.tick();
+    // so only props get updated (and shouldComponentUpdate does nothing but return false)
     this.initialize = () => {};
   }
 
@@ -105,7 +111,6 @@ export default class MultiLineGraph extends Component {
     return `${this.constructor.name}-${this.number}`;
   }
 
-  static numberInstantiated = 0
 
   render() {
     return (<div className={`graph ${this.className()}`} />);
