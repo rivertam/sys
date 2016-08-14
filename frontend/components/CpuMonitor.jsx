@@ -9,7 +9,7 @@ function numbers(data) {
   return (<div className="tile is-child level">
     {data.map((d, i) => (
       <div className="level-item has-text-centered" key={i}>
-        <h4 className="heading">CPU #{i}</h4>
+        <h4 className={`graph-heading-${i} heading`}>CPU #{i}</h4>
         <h2 className="title">{Math.round(d)}%</h2>
       </div>
     ))}

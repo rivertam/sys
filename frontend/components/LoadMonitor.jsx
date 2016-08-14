@@ -7,7 +7,7 @@ function numbers(data) {
   return (<div className="tile is-child level">
     {data.map((d, i) => (
       <div className="level-item has-text-centered" key={i}>
-        <h4 className="heading">Load average <br /> {MINUTES[i]} minutes</h4>
+        <h4 className={`graph-heading-${i} heading`}>Load average <br /> {MINUTES[i]} minutes</h4>
         <h2 className="title">{d.toFixed(2)}</h2>
       </div>
     ))}
